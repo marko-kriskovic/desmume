@@ -25,6 +25,10 @@ desmume_src = [
   gresource,
 ]
 
+if dep_lua.found()
+  desmume_src += ['tools/luaScriptConsole.cpp']
+endif
+
 if get_option('glx') and dep_gl.found()
   desmume_src += [
     '../shared/glx_3Demu.cpp',
