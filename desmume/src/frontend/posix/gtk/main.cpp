@@ -242,6 +242,7 @@ static void GraphicsSettingsDialog(GSimpleAction *action, GVariant *parameter, g
 
 #ifdef HAVE_LUA
 static void AddLuaScript(GSimpleAction *action, GVariant *parameter, gpointer user_data);
+static void CloseAllLuaScripts(GSimpleAction *action, GVariant *parameter, gpointer user_data);
 #endif
 
 static const GActionEntry app_entries[] = {
@@ -319,6 +320,7 @@ static const GActionEntry app_entries[] = {
     // dTool entries are populated dynamically in desmume_gtk_menu_tools().
 #ifdef HAVE_LUA
     { "addluascript",        AddLuaScript },
+    { "closealluascripts",   CloseAllLuaScripts },
 #endif
 
     // Help
@@ -595,6 +597,10 @@ static guint regMainLoop = 0;
 static void AddLuaScript(GSimpleAction *action, GVariant *parameter, gpointer user_data)
 {
     lua_script_open_console(GTK_WINDOW(pWindow));
+}
+static void CloseAllLuaScripts(GSimpleAction *action, GVariant *parameter, gpointer user_data)
+{
+    lua_script_close_all();
 }
 #endif
 

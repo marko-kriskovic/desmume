@@ -417,6 +417,17 @@ static void on_drag_data_received(GtkWidget * /*widget*/, GdkDragContext *ctx,
 // Public API
 // ────────────────────────────────────────
 
+void lua_script_close_all()
+{
+	// Collect windows first to avoid iterator invalidation during close
+	// Iterate in reverse order, matching Windows IDC_CLOSE_LUA_SCRIPTS behaviour
+	std::vector<GtkWidget*> windows;
+	for (auto &pair : g_consoles)
+		windows.push_back(pair.second->window);
+	for (int i = (int)windows.size() - 1; i >= 0; i--)
+		gtk_window_close(GTK_WINDOW(windows[i]));
+}
+
 void lua_script_open_console(GtkWindow *parent)
 {
 	LuaConsole *con = new LuaConsole();

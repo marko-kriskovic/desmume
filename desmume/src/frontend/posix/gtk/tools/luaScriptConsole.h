@@ -26,6 +26,7 @@
 #include <gtk/gtk.h>
 
 void lua_script_open_console(GtkWindow *parent);
+void lua_script_close_all();
 
 #endif /* HAVE_LUA */
 
