@@ -764,10 +764,10 @@
           <attribute name='action'>app.ioregs</attribute>
         </item>
         <submenu>
-          <attribute name='label' translatable='yes'>_Lua Scripts</attribute>
+          <attribute name='label' translatable='yes'>_Lua Scripting</attribute>
           <section>
             <item>
-              <attribute name='label' translatable='yes'>_Add new script...</attribute>
+              <attribute name='label' translatable='yes'>_New Lua Script Window...</attribute>
               <attribute name='action'>app.addluascript</attribute>
             </item>
           </section>
