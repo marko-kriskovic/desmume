@@ -48,6 +48,7 @@ executable('desmume',
   dependencies: gtk_dependencies,
   include_directories: includes,
   link_with: libdesmume,
+  link_args: ['-rdynamic'],
   install: true,
 )
 

@@ -56,6 +56,7 @@ executable('desmume',
   include_directories: includes,
   link_with: libdesmume,
   cpp_args: ['-DGTK_DISABLE_DEPRECATED'],
+  link_args: ['-rdynamic'],
   install: true,
 )
 
