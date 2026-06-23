@@ -56,7 +56,7 @@ executable('desmume',
   include_directories: includes,
   link_with: libdesmume,
   cpp_args: ['-DGTK_DISABLE_DEPRECATED'],
-  link_args: ['-rdynamic'],
+  link_args: ['-Wl,--dynamic-list,' + meson.current_source_dir() / '../lua-exports.txt'],
   install: true,
 )
 

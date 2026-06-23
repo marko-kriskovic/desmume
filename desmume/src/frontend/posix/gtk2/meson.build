@@ -48,7 +48,7 @@ executable('desmume',
   dependencies: gtk_dependencies,
   include_directories: includes,
   link_with: libdesmume,
-  link_args: ['-rdynamic'],
+  link_args: ['-Wl,--dynamic-list,' + meson.current_source_dir() / '../lua-exports.txt'],
   install: true,
 )
 

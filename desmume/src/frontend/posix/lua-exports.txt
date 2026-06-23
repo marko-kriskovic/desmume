@@ -1,0 +1,16 @@
+{
+    lua_createtable;
+    lua_gettop;
+    lua_objlen;
+    lua_pushcclosure;
+    lua_pushlstring;
+    lua_pushnil;
+    lua_pushstring;
+    lua_rawget;
+    lua_rawgeti;
+    lua_setfield;
+    lua_settop;
+    lua_tointeger;
+    lua_type;
+    luaL_optlstring;
+};
